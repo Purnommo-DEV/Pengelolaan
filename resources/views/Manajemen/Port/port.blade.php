@@ -42,8 +42,8 @@
                                         </div>
                                     </div>
 
-                                    <input type="text" name="action" id="action" value="Tambah" />
-                                    <input type="text" name="hidden_id" id="hidden_id" />
+                                    <input type="hidden" name="action" id="action" value="Tambah" hidden />
+                                    <input type="hidden" name="hidden_id" id="hidden_id" hidden />
 
                                     <div class="modal-footer"
                                         style="border-top: none!important;justify-content: flex-start;">
@@ -82,6 +82,9 @@
         var table = $('.user_datatable').DataTable({
             processing: true,
             serverSide: true,
+            scrollX: "100%",
+            sScrollXInner: "100%",
+            bScrollCollapse: true,
             ajax: "{{ route('HalamanManajemenPort') }}",
             columns: [{
                     data: 'port',
@@ -141,7 +144,7 @@
             var action_url = '';
 
             $.ajax({
-                url: "{{ route('ProsesTambahPort') }}",
+                url: "{{ route('ProsesSubmitPort') }}",
                 method: "POST",
                 data: new FormData(this),
                 processData: false,

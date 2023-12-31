@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('port', function (Blueprint $table) {
+        Schema::create('kargo_perusahaan', function (Blueprint $table) {
             $table->id();
-            $table->string('port');
+            $table->foreignId('perusahaan_id')->constrained('perusahaan')->cascadeOnDelete();
+            $table->foreignId('port_loading')->constrained('port');
+            $table->foreignId('port_discharge')->constrained('port');
+            $table->string('freight', 150)->nillable();
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('port');
+        Schema::dropIfExists('kargo_perusahaan');
     }
 };

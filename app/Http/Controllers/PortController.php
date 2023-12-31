@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Port;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\DataTables\PortDataTable;
 use Illuminate\Support\Facades\Validator;
 
 class PortController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['permission:view_port']);
+    }
 
     public function fn_port(Request $request)
     {
@@ -33,7 +37,7 @@ class PortController extends Controller
         }
     }
 
-    public function fn_proses_tambah_port(Request $request)
+    public function fn_proses_submit_port(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'port' => 'required'

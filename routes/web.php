@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\PortController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('proses-logout', [LoginController::class, 'proses_logout'])->name('ProsesLogout');
 
     // Manajemen Port
-    Route::get('halaman-port', [PortController::class, 'fn_port'])->name('HalamanManajemenPort');
-    Route::post('proses-tambah-port', [PortController::class, 'fn_proses_tambah_port'])->name('ProsesTambahPort');
-    Route::get('data-port/{id}', [PortController::class, 'fn_data_port']);
+    Route::controller(PortController::class)->group(function () {
+        Route::get('halaman-port', 'fn_port')->name('HalamanManajemenPort');
+        Route::post('proses-submit-port', 'fn_proses_submit_port')->name('ProsesSubmitPort');
+        Route::get('data-port/{id}', 'fn_data_port');
+    });
+
+    //Manajemen Perusahaan
+    Route::controller(PerusahaanController::class)->group(function () {
+        Route::get('halaman-perusahaan', 'fn_perusahaan')->name('HalamanManajemenPerusahaan');
+        Route::post('proses-tambah-perusahaan', 'fn_proses_tambah_perusahaan')->name('ProsesTambahPerusahaan');
+        Route::get('data-perusahaan/{id}', 'fn_data_perusahaan');
+        Route::get('hapus-data-perusahaan/{id}', 'fn_hapus_data_perusahaan');
+    });
 });

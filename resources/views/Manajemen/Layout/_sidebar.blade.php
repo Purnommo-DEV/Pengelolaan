@@ -23,6 +23,51 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link text-white @menuActive('HalamanManajemenPerusahaan')" href="{{ route('HalamanManajemenPerusahaan') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Manajemen Perusahaan</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#manajemenPengguna" class="nav-link text-white @menuActiveCollapsed('ManajemenPengguna.*')"
+                    aria-controls="manajemenPengguna" role="button" aria-expanded="false">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Manajemen Pengguna</span>
+                </a>
+                <div class="collapse @menuShow('ManajemenPengguna.*')" id="manajemenPengguna">
+                    <ul class="nav ">
+                        {{-- <li class="nav-item @menuActiveSub('ManajemenPengguna.HalamanRole')">
+                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanRole')"
+                                href="{{ route('ManajemenPengguna.HalamanRole.Role') }}">
+                                <span class="sidenav-mini-icon"> R </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Role </span>
+                            </a>
+                        </li>
+                        <li class="nav-item @menuActiveSub('ManajemenPengguna.HalamanPermission.*')">
+                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanPermission.*')"
+                                href="{{ route('ManajemenPengguna.HalamanPermission.Permission') }}">
+                                <span class="sidenav-mini-icon"> P </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Permission </span>
+                            </a>
+                        </li> --}}
+                        <li class="nav-item @menuActiveSub('ManajemenPengguna.HalamanUser.*')">
+                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanUser.*')"
+                                href="{{ route('ManajemenPengguna.HalamanUser.User') }}">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> User </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
                 <a class="nav-link text-white " href="{{ route('ProsesLogout') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fas fa-arrow-left"></i>
