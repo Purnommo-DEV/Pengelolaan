@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
     Route::controller(LoginController::class)->group(function () {
-        Route::get('/login', 'halaman_login')->name('HalamanLogin');
+        Route::get('/', 'halaman_login')->name('HalamanLogin');
         Route::post('/proses-login', 'proses_login')->name('ProsesLogin');
     });
 });
