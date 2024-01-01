@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Validator;
 class PortController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware(['permission:view_port']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['permission:view_port']);
+    // }
 
     public function fn_port(Request $request)
     {
