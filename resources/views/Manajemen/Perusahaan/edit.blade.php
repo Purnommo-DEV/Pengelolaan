@@ -268,9 +268,10 @@
 
 
                         <div class="modal-footer" style="border-top: none!important;justify-content: flex-start;">
-                            <button type="button" class="btn btn-sm btn-primary batal">
+                            <a href="{{ route('ManajemenPerusahaan.HalamanManajemenPerusahaan') }}"
+                                style="margin-right: 5px;" class="btn btn-sm btn-primary">
                                 Cancel
-                            </button>
+                            </a>
 
                             <button type="submit" class="btn btn-sm btn-info btn-sm" name="action-button"
                                 id="action-button" value="Tambah">
