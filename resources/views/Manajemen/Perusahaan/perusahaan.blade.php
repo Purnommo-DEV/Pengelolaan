@@ -16,7 +16,7 @@
                                     @csrf
                                     <div class="modal-body">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="myModalLabel33">Informasi Perusahaan</h5>
+                                            <h5 class="modal-title" id="myModalLabel33">Tambah Informasi Perusahaan</h5>
                                             <button type="button" class="btn-close text-dark batal" data-bs-dismiss="modal"
                                                 aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -161,9 +161,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3 my-3 d-flex align-items-end justify-content-evenly">
+                                            <div class="col-md-3 my-3 d-flex align-items-end">
                                                 <button type="button" name="add" id="add"
-                                                    class="btn btn-outline-secondary">+</button>
+                                                    class="btn btn-sm btn-outline-secondary">+</button>
                                             </div>
                                             <div id="dynamic_field">
                                             </div>
@@ -388,7 +388,7 @@
             $('#dynamic_field').append('<div class = "row dynamic-added" id="row' + e +
                 '"><div class="col-md-3"><div class="input-group input-group-outline my-3"></div></div> <div class="col-md-6" ><div class="input-group input-group-outline my-3" > <input name="email[]" id = "email" class="form-control" type="text"><div class="input-group has-validation"> <label style="margin-top: 0.1rem; font-size: 0.8rem; font-weight: 600;" class="text-danger error-text email' +
                 e +
-                '_error"></label></div ></div></div> <div class="col-md-3 my-3 d-flex align-items-end justify-content-evenly"><button type ="button" class="btn btn-outline-primary btn_remove" name = "remove" id = "' +
+                '_error"></label></div ></div></div> <div class="col-md-3 my-3 d-flex align-items-end"><button type ="button" class="btn btn-sm btn-outline-primary btn_remove" name = "remove" id = "' +
                 e + '" >-</button> </div></div>');
         });
 
@@ -404,7 +404,7 @@
             scrollX: "100%",
             sScrollXInner: "100%",
             bScrollCollapse: true,
-            ajax: "{{ route('HalamanManajemenPerusahaan') }}",
+            ajax: "{{ route('ManajemenPerusahaan.HalamanManajemenPerusahaan') }}",
             columns: [{
                     data: 'nama_perusahaan',
                     perusahaan: 'nama_perusahaan'

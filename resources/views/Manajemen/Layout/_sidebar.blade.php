@@ -16,16 +16,17 @@
             <li class="nav-item">
                 <a class="nav-link text-white @menuActive('HalamanManajemenPort')" href="{{ route('HalamanManajemenPort') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-mosque"></i>
+                        <i class="fas fa-file"></i>
                     </div>
                     <span class="nav-link-text ms-1">Manajemen Port</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white @menuActive('HalamanManajemenPerusahaan')" href="{{ route('HalamanManajemenPerusahaan') }}">
+                <a class="nav-link text-white @menuActive('ManajemenPerusahaan.*')"
+                    href="{{ route('ManajemenPerusahaan.HalamanManajemenPerusahaan') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-mosque"></i>
+                        <i class="fas fa-list"></i>
                     </div>
                     <span class="nav-link-text ms-1">Manajemen Perusahaan</span>
                 </a>
@@ -35,7 +36,7 @@
                 <a data-bs-toggle="collapse" href="#manajemenPengguna" class="nav-link text-white @menuActiveCollapsed('ManajemenPengguna.*')"
                     aria-controls="manajemenPengguna" role="button" aria-expanded="false">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                     <span class="nav-link-text ms-1">Manajemen Pengguna</span>
                 </a>
@@ -56,7 +57,14 @@
                             </a>
                         </li> --}}
                         <li class="nav-item @menuActiveSub('ManajemenPengguna.HalamanUser.*')">
-                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanUser.*')"
+                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanUser.Role')"
+                                href="{{ route('ManajemenPengguna.HalamanUser.Role') }}">
+                                <span class="sidenav-mini-icon"> R </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> Role </span>
+                            </a>
+                        </li>
+                        <li class="nav-item @menuActiveSub('ManajemenPengguna.HalamanUser.*')">
+                            <a class="nav-link text-white @menuActiveSub('ManajemenPengguna.HalamanUser.User')"
                                 href="{{ route('ManajemenPengguna.HalamanUser.User') }}">
                                 <span class="sidenav-mini-icon"> U </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> User </span>

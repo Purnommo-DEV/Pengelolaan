@@ -15,4 +15,9 @@ class Perusahaan extends Model
     {
         return $this->hasMany(EmailPerusahaan::class);
     }
+
+    public function relasi_kargo()
+    {
+        return $this->hasMany(KargoPerusahaan::class);
+    }
 }

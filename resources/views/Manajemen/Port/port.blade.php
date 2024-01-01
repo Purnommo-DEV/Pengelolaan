@@ -12,7 +12,7 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel33">Port Management</h4>
+                                    <h4 class="modal-title" id="myModalLabel33">Tambah Informasi Port</h4>
                                     <button type="button" class="btn-close text-dark batal" data-bs-dismiss="modal"
                                         aria-label="Close">
                                         <span aria-hidden="true">&times;</span>

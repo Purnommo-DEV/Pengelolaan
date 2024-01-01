@@ -41,6 +41,7 @@ class PermissionSeeder extends Seeder
 
         $role_superadmin->givePermissionTo($permission);
         $role_pengguna->givePermissionTo($permission);
+
         $role_superadmin->givePermissionTo($permission_2);
 
         $superadmin = User::find(1);
