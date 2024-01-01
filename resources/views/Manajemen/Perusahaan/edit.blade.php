@@ -132,7 +132,11 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="input-group input-group-outline my-2">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">
+                                                @if ($loop->index == 0)
+                                                    Email
+                                                @endif
+                                            </label>
                                         </div>
                                     </div>
 
